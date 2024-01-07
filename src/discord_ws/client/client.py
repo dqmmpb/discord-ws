@@ -133,15 +133,15 @@ class Client:
     """
 
     def __init__(
-        self,
-        *,
-        token: str,
-        intents: Intents,
-        gateway_url: str | None = None,
-        user_agent: str | None = None,
-        compress: bool = True,
-        large_threshold: int | None = None,
-        presence: GatewayPresenceUpdate | None = None,
+            self,
+            *,
+            token: str,
+            intents: Intents,
+            gateway_url: str | None = None,
+            user_agent: str | None = None,
+            compress: bool = True,
+            large_threshold: int | None = None,
+            presence: GatewayPresenceUpdate | None = None,
     ) -> None:
         """
         :param token:
@@ -255,10 +255,10 @@ class Client:
                 await asyncio.sleep(duration)
 
     async def set_presence(
-        self,
-        presence: GatewayPresenceUpdate,
-        *,
-        persistent: bool = True,
+            self,
+            presence: GatewayPresenceUpdate,
+            *,
+            persistent: bool = True,
     ) -> None:
         """Sets the bot's presence for the current connection, if any.
 
@@ -548,9 +548,9 @@ class Client:
         return str(close)
 
     def _make_connection_closed_error(
-        self,
-        code: int,
-        reason: str,
+            self,
+            code: int,
+            reason: str,
     ) -> ConnectionClosedError:
         """Creates an exception for the given close code."""
         if code == 4004:
@@ -562,3 +562,7 @@ class Client:
                 reason,
             )
         return ConnectionClosedError(code, reason)
+
+    @property
+    def session_id(self) -> str | None:
+        return self._session_id

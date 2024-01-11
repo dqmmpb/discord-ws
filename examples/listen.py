@@ -1,10 +1,19 @@
 import asyncio
+import sys
 import textwrap
 
 import discord_ws
 
-TOKEN = "Bot YOUR_TOKEN_HERE"
+import logging
+
+logging.basicConfig(
+    format="%(name)30s (%(levelname)8s) => %(message)s",
+)
+logging.getLogger("discord_ws.client.client").setLevel(logging.DEBUG)
+
+TOKEN = "YOUR_TOKEN_HERE"
 MAX_LENGTH = 100
+# MAX_LENGTH = sys.maxsize
 
 client = discord_ws.Client(
     token=TOKEN,

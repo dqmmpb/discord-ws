@@ -251,7 +251,7 @@ class Client:
 
             if reconnect:
                 duration = self._reconnect_backoff()
-                log.info("Waiting %.3fs before reconnecting", duration)
+                log.info("Waiting %.3fs before reconnecting %s", duration, self.token[:10])
                 await asyncio.sleep(duration)
 
     async def set_presence(
@@ -508,17 +508,17 @@ class Client:
         a boolean indicating if the client is allowed to reconnect.
         """
         if e.rcvd is None and e.sent is None:
-            log.info("Connection lost, can reconnect")
+            log.info("Connection lost, can reconnect %s", self.token[:10])
             return True
         elif e.sent is not None and not e.rcvd_then_sent:
             # 1000 / 1001 causes our client to appear offline,
             # in which case we probably don't want to reconnect
             reconnect = e.sent.code not in (1000, 1001)
             if reconnect:
-                message = "Closed by us with %d, can reconnect"
+                message = "Closed by us with %d, can reconnect %s"
             else:
-                message = "Closed by us with %d, will not reconnect"
-            log.info(message, e.sent.code)
+                message = "Closed by us with %d, will not reconnect %s"
+            log.info(message, e.sent.code, self.token[:10])
             return reconnect
         elif e.rcvd is not None:
             code = e.rcvd.code
@@ -531,14 +531,14 @@ class Client:
                 exc = self._make_connection_closed_error(code, reason)
                 raise exc from None
             elif self._can_resume():
-                action = "Closed with %s, session can be resumed"
-                log.info(action, reason)
+                action = "Closed with %s, session can be resumed %s"
+                log.info(action, reason, self.token[:10])
             else:
-                action = "Closed with %s, session cannot be resumed"
-                log.info(action, reason)
+                action = "Closed with %s, session cannot be resumed %s"
+                log.info(action, reason, self.token[:10])
             return True
         # We only have e.sent, but e.rcvd_then_sent is True?
-        log.exception("Ignoring unusual ConnectionClosed exception")
+        log.exception("Ignoring unusual ConnectionClosed exception %s", self.token[:10])
         return True
 
     def _get_connection_closed_reason(self, close: websockets.frames.Close) -> str:

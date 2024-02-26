@@ -234,7 +234,7 @@ class Client:
                 session_id = None
                 self._heart.sequence = None
 
-            log.info("Connecting to the gateway (session_id: %s)", session_id)
+            log.info("Connecting to the gateway (session_id: %s) %s", session_id, self.token[:10])
 
             try:
                 async with self._connect(gateway_url) as ws:

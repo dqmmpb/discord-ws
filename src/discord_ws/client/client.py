@@ -296,7 +296,7 @@ class Client:
     async def _get_gateway_url(self) -> str:
         from discord_ws import http
 
-        log.debug("Requesting gateway URL")
+        log.debug("Requesting gateway URL %s", self.token[:10])
         async with http.create_httpx_client(token=self.token) as client:
             client.headers["User-Agent"] = self.user_agent
             resp = await client.get("/gateway")
@@ -358,7 +358,7 @@ class Client:
             # compression=None,
         )
 
-        log.debug("Creating websocket connection")
+        log.debug("Creating websocket connection %s", self.token[:10])
 
         async with connector as ws:
             self._current_websocket = ws
@@ -394,7 +394,7 @@ class Client:
         """
         assert self._stream is not None
         payload = await self._create_identify_payload()
-        log.debug("Sending identify payload")
+        log.debug("Sending identify payload %s", self.token[:10])
         await self._stream.send(payload)
 
     async def _create_identify_payload(self) -> Event:
@@ -425,7 +425,7 @@ class Client:
         """
         assert self._stream is not None
         payload = await self._create_resume_payload(session_id)
-        log.debug("Sending resume payload")
+        log.debug("Sending resume payload %s", self.token[:10])
         await self._stream.send(payload)
 
     async def _create_resume_payload(self, session_id: str) -> Event:
@@ -450,7 +450,7 @@ class Client:
         if event["op"] == 0:
             # Dispatch
             event = cast(DispatchEvent, event)
-            log.debug("Received %s event", event["t"])
+            log.debug("Received %s event %s", event["t"], self.token[:10])
 
             self._heart.sequence = event["s"]
 
@@ -462,29 +462,29 @@ class Client:
 
         elif event["op"] == 1:
             # Heartbeat
-            log.debug("Received request to heartbeat")
+            log.debug("Received request to heartbeat %s", self.token[:10])
             self._heart.beat_soon()
 
         elif event["op"] == 7:
             # Reconnect
-            log.debug("Received request to reconnect")
+            log.debug("Received request to reconnect %s", self.token[:10])
             raise GatewayReconnect()
 
         elif event["op"] == 9:
             # Invalid Session
             event = cast(InvalidSession, event)
-            log.debug("Session has been invalidated")
+            log.debug("Session has been invalidated %s", self.token[:10])
             raise SessionInvalidated(resumable=event["d"])
 
         elif event["op"] == 10:
             # Hello
             event = cast(Hello, event)
-            log.debug("Received hello from gateway")
+            log.debug("Received hello from gateway %s", self.token[:10])
             await self._heart.set_interval(event["d"]["heartbeat_interval"] / 1000)
 
         elif event["op"] == 11:
             # Heartbeat ACK
-            log.debug("Received heartbeat acknowledgement")
+            log.debug("Received heartbeat acknowledgement %s", self.token[:10])
             self._heart.acknowledged = True
 
     def _dispatch(self, event: DispatchEvent) -> None:

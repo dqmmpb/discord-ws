@@ -109,8 +109,10 @@ class Heart:
         await asyncio.wait_for(self._wait_for_interval(), timeout=60.0)
         assert self.interval is not None
 
+        # jitter = self._rand.random()
+        # timeout = self.interval + jitter
         jitter = self._rand.random()
-        timeout = self.interval + jitter
+        timeout = self.interval * jitter
 
         try:
             log.debug("Waiting %.2fs for heartbeat", timeout)

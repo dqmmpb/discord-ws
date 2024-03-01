@@ -10,6 +10,7 @@ logging.basicConfig(
     format="%(name)30s (%(levelname)8s) => %(message)s",
 )
 logging.getLogger("discord_ws.client.client").setLevel(logging.DEBUG)
+logging.getLogger("discord_ws.client.heartbeat").setLevel(logging.DEBUG)
 
 TOKEN = "YOUR_TOKEN_HERE"
 MAX_LENGTH = 100

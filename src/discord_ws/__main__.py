@@ -62,7 +62,7 @@ async def main():
     logging.getLogger(__package__).setLevel(logging.DEBUG)
 
     client = Client(
-        token=f"Bot {token}",
+        token=f"{token}",
         intents=args.intents,
         compress=args.compression is not None,
     )

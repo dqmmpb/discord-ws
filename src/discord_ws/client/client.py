@@ -179,7 +179,7 @@ class Client:
         self.presence = presence
 
         self._dispatch_func = None
-        self._heart = Heart()
+        self._heart = Heart(token)
         self._reconnect_backoff = ExponentialBackoff()
         self._stream = None
 
@@ -450,7 +450,7 @@ class Client:
         if event["op"] == 0:
             # Dispatch
             event = cast(DispatchEvent, event)
-            log.debug("Received %s event %s", event["t"], self.token[:10])
+            log.debug("Received %s event sequence %s %s", event["t"], str(event["s"]) if event["s"] is not None else "None", self.token[:10])
 
             self._heart.sequence = event["s"]
 

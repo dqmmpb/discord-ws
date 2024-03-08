@@ -36,7 +36,11 @@ class Heart:
     This attribute should be updated by the caller.
     """
 
-    def __init__(self) -> None:
+    token: str
+    """The token to use for authenticating with the gateway."""
+
+    def __init__(self, token: str) -> None:
+        self.token = token
         self.acknowledged = True
         self.sequence = None
 
@@ -91,6 +95,10 @@ class Heart:
     async def set_interval(self, interval: float | None) -> None:
         """Sets the heartbeat interval, notifying the heart of any changes."""
         self._interval = interval
+        if self._interval is not None:
+            log.debug("Received interval %.2fs for heartbeat %s", self._interval, self.token[:10])
+        else:
+            log.debug("Received interval None for heartbeat %s", self.token[:10])
         async with self._interval_cond:
             self._interval_cond.notify_all()
 
@@ -109,15 +117,16 @@ class Heart:
         await asyncio.wait_for(self._wait_for_interval(), timeout=60.0)
         assert self.interval is not None
 
-        # jitter = self._rand.random()
-        # timeout = self.interval + jitter
         jitter = self._rand.random()
-        timeout = self.interval * jitter
+        timeout = self.interval + jitter
+        # jitter = self._rand.random()
+        # timeout = self.interval * jitter
 
         try:
-            log.debug("Waiting %.2fs for heartbeat", timeout)
+            log.debug("Waiting %.2fs for heartbeat %s", timeout, self.token[:10])
             await asyncio.wait_for(self._beat_event.wait(), timeout)
         except asyncio.TimeoutError:
+            log.debug("Waiting %.2fs for heartbeat %s timeout", timeout, self.token[:10])
             pass
 
     async def _wait_for_interval(self) -> float:
@@ -129,12 +138,13 @@ class Heart:
     async def _send_heartbeat(self, stream: Stream) -> None:
         """Sends a heartbeat payload to Discord."""
         if not self.acknowledged:
-            log.debug("Heartbeat not acknowledged")
+            log.debug("Heartbeat not acknowledged %s", self.token[:10])
             raise HeartbeatLostError()
 
         payload = self._create_heartbeat_payload()
-        log.debug("Sending heartbeat, last sequence: %s", self.sequence)
+        log.debug("Sending heartbeat, last sequence: %s %s", self.sequence, self.token[:10])
         await stream.send(payload)
+        log.debug("Sending heartbeat, last sequence: %s %s done", self.sequence, self.token[:10])
 
         self._beat_event.clear()
         self.acknowledged = False

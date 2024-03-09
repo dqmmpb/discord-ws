@@ -77,7 +77,7 @@ class Heart:
             raise
         finally:
             log.debug("Heartbeat exited %s", self.token[:10])
-            # await self.set_interval(None)
+            await self.set_interval(None)
             self.acknowledged = True
             # self.sequence should not be reset because it needs to persist
             # between connections when resuming

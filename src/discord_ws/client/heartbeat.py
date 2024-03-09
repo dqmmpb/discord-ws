@@ -109,8 +109,12 @@ class Heart:
     async def _run(self, stream: Stream) -> None:
         """Runs the heartbeat loop indefinitely."""
         while True:
-            await self._sleep()
-            await self._send_heartbeat(stream)
+            try:
+                await self._sleep()
+                await self._send_heartbeat(stream)
+            except Exception as e:
+                log.error("Heartbeat error %s %s", e, self.token[:10])
+                raise
 
     async def _sleep(self) -> None:
         """Sleeps until the next heartbeat interval.
@@ -118,7 +122,11 @@ class Heart:
         .. seealso:: https://discord.com/developers/docs/topics/gateway#sending-heartbeats
 
         """
-        await asyncio.wait_for(self._wait_for_interval(), timeout=60.0)
+        try:
+            await asyncio.wait_for(self._wait_for_interval(), timeout=60.0)
+        except asyncio.TimeoutError:
+            log.debug("Waiting for heartbeat interval %s timeout", self.token[:10])
+            raise
         assert self.interval is not None
 
         jitter = self._rand.random()

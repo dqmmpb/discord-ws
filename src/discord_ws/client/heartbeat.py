@@ -72,8 +72,12 @@ class Heart:
             async with asyncio.TaskGroup() as tg:
                 tg.create_task(self._run(stream))
                 yield self
+        except Exception as e:
+            log.error("Heartbeat error %s %s", e, self.token[:10])
+            raise
         finally:
-            await self.set_interval(None)
+            log.debug("Heartbeat exited %s", self.token[:10])
+            # await self.set_interval(None)
             self.acknowledged = True
             # self.sequence should not be reset because it needs to persist
             # between connections when resuming

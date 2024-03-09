@@ -486,6 +486,8 @@ class Client:
             # Heartbeat ACK
             log.debug("Received heartbeat acknowledgement %s", self.token[:10])
             self._heart.acknowledged = True
+        else:
+            log.warning("Received unknown opcode %d %s", event["op"], self.token[:10])
 
     def _dispatch(self, event: DispatchEvent) -> None:
         """Dispatches an event using the callback assigned by :meth:`on_dispatch()`."""

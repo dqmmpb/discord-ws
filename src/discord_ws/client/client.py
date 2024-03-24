@@ -526,6 +526,8 @@ class Client:
             code = e.rcvd.code
             reason = self._get_connection_closed_reason(e.rcvd)
 
+            log.debug("Connection closed with %s %s", code, self.token[:10])
+
             if code in GATEWAY_CANNOT_RESUME_CLOSE_CODES:
                 self._invalidate_session()
 

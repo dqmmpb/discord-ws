@@ -6,6 +6,7 @@ import random
 from contextlib import asynccontextmanager
 from typing import TYPE_CHECKING, AsyncIterator, Self, cast
 
+import websockets
 from discord_ws.errors import HeartbeatLostError
 
 if TYPE_CHECKING:
@@ -160,7 +161,11 @@ class Heart:
 
         payload = self._create_heartbeat_payload()
         log.debug("Sending heartbeat, last sequence: %s %s", self.sequence, self.token[:10])
-        await stream.send(payload)
+        try:
+            await stream.send(payload)
+        except websockets.exceptions.ConnectionClosed as e:
+            log.error("Heartbeat connection closed %s %s", e, self.token[:10])
+            raise
         log.debug("Sending heartbeat, last sequence: %s %s done", self.sequence, self.token[:10])
 
         self._beat_event.clear()

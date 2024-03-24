@@ -116,4 +116,8 @@ class ZLibStream(Stream):
     async def send(self, payload: Event) -> None:
         data = json.dumps(payload)
         log.debug("Sending %d %s", len(data), _get_data_type(data))
-        await self.ws.send(data)
+        try:
+            await self.ws.send(data)
+        except Exception as e:
+            log.error("ZLibStream send error %s %s", e, data)
+            raise

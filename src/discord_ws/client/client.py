@@ -270,7 +270,12 @@ class Client:
         """
         if self._stream is not None:
             payload: Event = {"op": 3, "d": presence}
-            await self._stream.send(payload)
+            try:
+                await self._stream.send(payload)
+            except websockets.exceptions.ConnectionClosed as e:
+                log.error("Client connection closed set_presence %s %s", e, self.token[:10])
+                raise
+
         if persistent:
             self.presence = presence
 
@@ -395,7 +400,11 @@ class Client:
         assert self._stream is not None
         payload = await self._create_identify_payload()
         log.debug("Sending identify payload %s", self.token[:10])
-        await self._stream.send(payload)
+        try:
+            await self._stream.send(payload)
+        except websockets.exceptions.ConnectionClosed as e:
+            log.error("Client connection closed _identify %s %s", e, self.token[:10])
+            raise
 
     async def _create_identify_payload(self) -> Event:
         metadata = get_distribution_metadata()
@@ -426,7 +435,11 @@ class Client:
         assert self._stream is not None
         payload = await self._create_resume_payload(session_id)
         log.debug("Sending resume payload %s", self.token[:10])
-        await self._stream.send(payload)
+        try:
+            await self._stream.send(payload)
+        except websockets.exceptions.ConnectionClosed as e:
+            log.error("Client connection closed _resume %s %s", e, self.token[:10])
+            raise
 
     async def _create_resume_payload(self, session_id: str) -> Event:
         return {

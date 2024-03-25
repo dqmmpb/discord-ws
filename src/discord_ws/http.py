@@ -9,7 +9,8 @@ from .metadata import get_distribution_metadata
 BASE_URL = f"https://discord.com/api/v{constants.API_VERSION}"
 """The versioned discord API URL to use when making HTTP requests."""
 
-USER_AGENT_TEMPLATE = "DiscordBot ({homepage} {version}) Python/{python_version}"
+# USER_AGENT_TEMPLATE = "DiscordBot ({homepage} {version}) Python/{python_version}"
+USER_AGENT_TEMPLATE = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36"
 """The template to use when creating the user agent to be sent to Discord."""
 
 

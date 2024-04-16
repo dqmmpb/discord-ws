@@ -345,8 +345,8 @@ class Client:
         import urllib.parse
 
         params = {
-            "v": constants.API_VERSION,
             "encoding": "json",
+            "v": constants.API_VERSION,
         }
 
         if self.compress:
@@ -360,6 +360,13 @@ class Client:
         connector = websockets.client.connect(
             self._add_gateway_params(url),
             user_agent_header=self.user_agent,
+            extra_headers={
+                "Accept-Encoding": "gzip, deflate, br, zstd",
+                "Accept-Language": "en-US,en;q=0.9,zh-CN;q=0.8,zh-TW;q=0.7,zh;q=0.6",
+                "Pragma":"no-cache",
+                "Cache-Control":"no-cache",
+            },
+            origin="https://discord.com",
             # compression=None,
         )
 
@@ -459,6 +466,8 @@ class Client:
         """
         assert self._stream is not None
         event = await self._stream.recv()
+
+        log.debug("Received event sequence %s %s", event, self.token[:10])
 
         if event["op"] == 0:
             # Dispatch

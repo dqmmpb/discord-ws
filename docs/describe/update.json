@@ -1,0 +1,153 @@
+{
+  "webhook_id": "936929561302675456",
+  "type": 20,
+  "tts": false,
+  "timestamp": "2024-04-16T03:18:50.223000+00:00",
+  "position": 0,
+  "pinned": false,
+  "mentions": [],
+  "mention_roles": [],
+  "mention_everyone": false,
+  "member": {
+    "roles": [
+      "1171331616409399321"
+    ],
+    "premium_since": null,
+    "pending": false,
+    "nick": null,
+    "mute": false,
+    "joined_at": "2023-11-07T06:13:39.715000+00:00",
+    "flags": 0,
+    "deaf": false,
+    "communication_disabled_until": null,
+    "avatar": null
+  },
+  "interaction_metadata": {
+    "user_id": "1135150119491227748",
+    "type": 2,
+    "name": "describe",
+    "id": "1229632063003430922",
+    "authorizing_integration_owners": {
+      "0": "1171326645420961793"
+    }
+  },
+  "interaction": {
+    "user": {
+      "username": "dqmmpb",
+      "public_flags": 0,
+      "id": "1135150119491227748",
+      "global_name": "dqmmpb",
+      "discriminator": "0",
+      "clan": null,
+      "avatar_decoration_data": null,
+      "avatar": null
+    },
+    "type": 2,
+    "name": "describe",
+    "member": {
+      "roles": [],
+      "premium_since": null,
+      "pending": false,
+      "nick": null,
+      "mute": false,
+      "joined_at": "2023-11-07T05:53:54.487000+00:00",
+      "flags": 0,
+      "deaf": false,
+      "communication_disabled_until": null,
+      "avatar": null
+    },
+    "id": "1229632063003430922"
+  },
+  "id": "1229632066963112048",
+  "flags": 0,
+  "embeds": [
+    {
+      "type": "rich",
+      "image": {
+        "width": 0,
+        "url": "https://cdn.discordapp.com/ephemeral-attachments/1092492867185950852/1229632060994486393/dqmmpb_715591948192623001617195737375315845143a_cute_cat_0e12ac29-42ba-450c-bd34-9f040c806f89.png?ex=66306318&is=661dee18&hm=85c765faca2f58255fb366a6b9c1e84d5034e1349f9c4af8f1e7fe6b3ce93774&",
+        "proxy_url": "https://media.discordapp.net/ephemeral-attachments/1092492867185950852/1229632060994486393/dqmmpb_715591948192623001617195737375315845143a_cute_cat_0e12ac29-42ba-450c-bd34-9f040c806f89.png?ex=66306318&is=661dee18&hm=85c765faca2f58255fb366a6b9c1e84d5034e1349f9c4af8f1e7fe6b3ce93774&",
+        "height": 0
+      },
+      "description": "1️⃣ photo of a cute kitten with beautiful eyes and a cute face, sitting on the bed with an adorable and curious expression. Soft lighting and a closeup shot with high resolution photography. \n\n2️⃣ A cute kitten, lying on the bed with its head tilted down and big eyes looking at you, looks very happy. High definition photography photos in the style of unknown artists. \n\n3️⃣ photo of a cute kitten with soft lighting and cute eyes, lying on the bed with its head tilted up to the camera, with its paws showing from the bottom of the photo, in the style of Van Gogh \n\n4️⃣ Cute kitten with a cute cat expression lying on the bed with its head tilted down and eyes looking at you curiously. It has light brown fur and the image has soft lighting with a shallow depth of field in the style of high definition photography. Warm tones are used with a cute pet wallpaper effect. A macro lens creates a soft focus effect."
+    }
+  ],
+  "edited_timestamp": null,
+  "content": "",
+  "components": [
+    {
+      "type": 1,
+      "components": [
+        {
+          "type": 2,
+          "style": 2,
+          "emoji": {
+            "name": "1️⃣"
+          },
+          "custom_id": "MJ::Job::PicReader::1"
+        },
+        {
+          "type": 2,
+          "style": 2,
+          "emoji": {
+            "name": "2️⃣"
+          },
+          "custom_id": "MJ::Job::PicReader::2"
+        },
+        {
+          "type": 2,
+          "style": 2,
+          "emoji": {
+            "name": "3️⃣"
+          },
+          "custom_id": "MJ::Job::PicReader::3"
+        },
+        {
+          "type": 2,
+          "style": 2,
+          "emoji": {
+            "name": "4️⃣"
+          },
+          "custom_id": "MJ::Job::PicReader::4"
+        },
+        {
+          "type": 2,
+          "style": 2,
+          "emoji": {
+            "name": "🔄"
+          },
+          "custom_id": "MJ::Picread::Retry"
+        }
+      ]
+    },
+    {
+      "type": 1,
+      "components": [
+        {
+          "type": 2,
+          "style": 2,
+          "label": "Imagine all",
+          "emoji": {
+            "name": "🎉"
+          },
+          "custom_id": "MJ::Job::PicReader::all"
+        }
+      ]
+    }
+  ],
+  "channel_id": "1171327790277206096",
+  "author": {
+    "username": "Midjourney Bot",
+    "public_flags": 589824,
+    "id": "936929561302675456",
+    "global_name": null,
+    "discriminator": "9282",
+    "clan": null,
+    "bot": true,
+    "avatar_decoration_data": null,
+    "avatar": "f6ce562a6b4979c4b1cbc5b436d3be76"
+  },
+  "attachments": [],
+  "application_id": "936929561302675456",
+  "guild_id": "1171326645420961793"
+}

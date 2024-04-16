@@ -1,0 +1,128 @@
+{
+  "webhook_id": "936929561302675456",
+  "type": 20,
+  "tts": false,
+  "timestamp": "2024-04-12T10:28:46.447000+00:00",
+  "position": 0,
+  "pinned": false,
+  "mentions": [
+    {
+      "username": "dqmmpb",
+      "public_flags": 0,
+      "member": {
+        "roles": [
+
+        ],
+        "premium_since": null,
+        "pending": false,
+        "nick": null,
+        "mute": false,
+        "joined_at": "2023-11-07T05:53:54.487000+00:00",
+        "flags": 0,
+        "deaf": false,
+        "communication_disabled_until": null,
+        "avatar": null
+      },
+      "id": "1135150119491227748",
+      "global_name": "dqmmpb",
+      "discriminator": "0",
+      "clan": null,
+      "avatar_decoration_data": null,
+      "avatar": null
+    }
+  ],
+  "mention_roles": [
+
+  ],
+  "mention_everyone": false,
+  "member": {
+    "roles": [
+      "1171331616409399321"
+    ],
+    "premium_since": null,
+    "pending": false,
+    "nick": null,
+    "mute": false,
+    "joined_at": "2023-11-07T06:13:39.715000+00:00",
+    "flags": 0,
+    "deaf": false,
+    "communication_disabled_until": null,
+    "avatar": null
+  },
+  "interaction_metadata": {
+    "user_id": "1135150119491227748",
+    "type": 2,
+    "name": "imagine",
+    "id": "1228290711577952328",
+    "authorizing_integration_owners": {
+      "0": "1171326645420961793"
+    }
+  },
+  "interaction": {
+    "user": {
+      "username": "dqmmpb",
+      "public_flags": 0,
+      "id": "1135150119491227748",
+      "global_name": "dqmmpb",
+      "discriminator": "0",
+      "clan": null,
+      "avatar_decoration_data": null,
+      "avatar": null
+    },
+    "type": 2,
+    "name": "imagine",
+    "member": {
+      "roles": [
+
+      ],
+      "premium_since": null,
+      "pending": false,
+      "nick": null,
+      "mute": false,
+      "joined_at": "2023-11-07T05:53:54.487000+00:00",
+      "flags": 0,
+      "deaf": false,
+      "communication_disabled_until": null,
+      "avatar": null
+    },
+    "id": "1228290711577952328"
+  },
+  "id": "1228290712706089092",
+  "flags": 0,
+  "embeds": [
+
+  ],
+  "edited_timestamp": "2024-04-12T10:29:37.581738+00:00",
+  "content": "**a cute cat** - <@1135150119491227748> (95%) (fast)",
+  "components": [
+
+  ],
+  "channel_id": "1171327790277206096",
+  "author": {
+    "username": "Midjourney Bot",
+    "public_flags": 589824,
+    "id": "936929561302675456",
+    "global_name": null,
+    "discriminator": "9282",
+    "clan": null,
+    "bot": true,
+    "avatar_decoration_data": null,
+    "avatar": "f6ce562a6b4979c4b1cbc5b436d3be76"
+  },
+  "attachments": [
+    {
+      "width": 512,
+      "url": "https://cdn.discordapp.com/attachments/1171327790277206096/1228290927353659514/7369163b-e910-4239-872f-0a233214b419_grid_0.webp?ex=662b8211&is=66190d11&hm=840eb3fefe62c6f8b5335dfd4c810c64947876de22768140d62dee2e15715c54&",
+      "size": 63152,
+      "proxy_url": "https://media.discordapp.net/attachments/1171327790277206096/1228290927353659514/7369163b-e910-4239-872f-0a233214b419_grid_0.webp?ex=662b8211&is=66190d11&hm=840eb3fefe62c6f8b5335dfd4c810c64947876de22768140d62dee2e15715c54&",
+      "placeholder_version": 1,
+      "placeholder": "3CgKFwJ2YHthh4iUd8eJeXeF9sRtX84G",
+      "id": "1228290927353659514",
+      "height": 512,
+      "filename": "7369163b-e910-4239-872f-0a233214b419_grid_0.webp",
+      "content_type": "image/webp"
+    }
+  ],
+  "application_id": "936929561302675456",
+  "guild_id": "1171326645420961793"
+}

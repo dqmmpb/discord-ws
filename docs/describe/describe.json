@@ -1,0 +1,62 @@
+{
+  "type": 2,
+  "application_id": "936929561302675456",
+  "guild_id": "1171326645420961793",
+  "channel_id": "1171327790277206096",
+  "session_id": "918c21574f20e3ceb43dfa5cf3a67cb8",
+  "data": {
+    "version": "1204231436023111690",
+    "id": "1092492867185950852",
+    "name": "describe",
+    "type": 1,
+    "options": [
+      {
+        "type": 11,
+        "name": "image",
+        "value": 0
+      }
+    ],
+    "application_command": {
+      "id": "1092492867185950852",
+      "type": 1,
+      "application_id": "936929561302675456",
+      "version": "1204231436023111690",
+      "name": "describe",
+      "description": "Writes a prompt based on your image.",
+      "options": [
+        {
+          "type": 11,
+          "name": "image",
+          "description": "The image to describe",
+          "required": false,
+          "description_localized": "The image to describe",
+          "name_localized": "image"
+        },
+        {
+          "type": 3,
+          "name": "link",
+          "description": "…",
+          "required": false,
+          "description_localized": "…",
+          "name_localized": "link"
+        }
+      ],
+      "dm_permission": true,
+      "integration_types": [
+        0
+      ],
+      "global_popularity_rank": 3,
+      "description_localized": "Writes a prompt based on your image.",
+      "name_localized": "describe"
+    },
+    "attachments": [
+      {
+        "id": "0",
+        "filename": "dqmmpb_715591948192623001617195737375315845143a_cute_cat_0e12ac29-42ba-450c-bd34-9f040c806f89.png",
+        "uploaded_filename": "2fcdbd47-800e-46dc-aad8-634e7edbc266/dqmmpb_715591948192623001617195737375315845143a_cute_cat_0e12ac29-42ba-450c-bd34-9f040c806f89.png"
+      }
+    ]
+  },
+  "nonce": "1229328060625453056",
+  "analytics_location": "slash_ui"
+}

@@ -1,0 +1,153 @@
+{
+  "type": 0,
+  "tts": false,
+  "timestamp": "2024-04-12T10:29:41.644000+00:00",
+  "referenced_message": null,
+  "pinned": false,
+  "mentions": [
+    {
+      "username": "dqmmpb",
+      "public_flags": 0,
+      "member": {
+        "roles": [
+
+        ],
+        "premium_since": null,
+        "pending": false,
+        "nick": null,
+        "mute": false,
+        "joined_at": "2023-11-07T05:53:54.487000+00:00",
+        "flags": 0,
+        "deaf": false,
+        "communication_disabled_until": null,
+        "avatar": null
+      },
+      "id": "1135150119491227748",
+      "global_name": "dqmmpb",
+      "discriminator": "0",
+      "clan": null,
+      "avatar_decoration_data": null,
+      "avatar": null
+    }
+  ],
+  "mention_roles": [
+
+  ],
+  "mention_everyone": false,
+  "member": {
+    "roles": [
+      "1171331616409399321"
+    ],
+    "premium_since": null,
+    "pending": false,
+    "nick": null,
+    "mute": false,
+    "joined_at": "2023-11-07T06:13:39.715000+00:00",
+    "flags": 0,
+    "deaf": false,
+    "communication_disabled_until": null,
+    "avatar": null
+  },
+  "id": "1228290944218959955",
+  "flags": 0,
+  "embeds": [
+
+  ],
+  "edited_timestamp": null,
+  "content": "**a cute cat** - <@1135150119491227748> (fast)",
+  "components": [
+    {
+      "type": 1,
+      "components": [
+        {
+          "type": 2,
+          "style": 2,
+          "label": "U1",
+          "custom_id": "MJ::JOB::upsample::1::7369163b-e910-4239-872f-0a233214b419"
+        },
+        {
+          "type": 2,
+          "style": 2,
+          "label": "U2",
+          "custom_id": "MJ::JOB::upsample::2::7369163b-e910-4239-872f-0a233214b419"
+        },
+        {
+          "type": 2,
+          "style": 2,
+          "label": "U3",
+          "custom_id": "MJ::JOB::upsample::3::7369163b-e910-4239-872f-0a233214b419"
+        },
+        {
+          "type": 2,
+          "style": 2,
+          "label": "U4",
+          "custom_id": "MJ::JOB::upsample::4::7369163b-e910-4239-872f-0a233214b419"
+        },
+        {
+          "type": 2,
+          "style": 2,
+          "emoji": {
+            "name": "🔄"
+          },
+          "custom_id": "MJ::JOB::reroll::0::7369163b-e910-4239-872f-0a233214b419::SOLO"
+        }
+      ]
+    },
+    {
+      "type": 1,
+      "components": [
+        {
+          "type": 2,
+          "style": 2,
+          "label": "V1",
+          "custom_id": "MJ::JOB::variation::1::7369163b-e910-4239-872f-0a233214b419"
+        },
+        {
+          "type": 2,
+          "style": 2,
+          "label": "V2",
+          "custom_id": "MJ::JOB::variation::2::7369163b-e910-4239-872f-0a233214b419"
+        },
+        {
+          "type": 2,
+          "style": 2,
+          "label": "V3",
+          "custom_id": "MJ::JOB::variation::3::7369163b-e910-4239-872f-0a233214b419"
+        },
+        {
+          "type": 2,
+          "style": 2,
+          "label": "V4",
+          "custom_id": "MJ::JOB::variation::4::7369163b-e910-4239-872f-0a233214b419"
+        }
+      ]
+    }
+  ],
+  "channel_id": "1171327790277206096",
+  "author": {
+    "username": "Midjourney Bot",
+    "public_flags": 589824,
+    "id": "936929561302675456",
+    "global_name": null,
+    "discriminator": "9282",
+    "clan": null,
+    "bot": true,
+    "avatar_decoration_data": null,
+    "avatar": "f6ce562a6b4979c4b1cbc5b436d3be76"
+  },
+  "attachments": [
+    {
+      "width": 2048,
+      "url": "https://cdn.discordapp.com/attachments/1171327790277206096/1228290943908712539/dqmmpb_a_cute_cat_7369163b-e910-4239-872f-0a233214b419.png?ex=662b8215&is=66190d15&hm=497ad524fc5610b68201705a1af1bb214c83b192a322090416dcb57022798a42&",
+      "size": 7040130,
+      "proxy_url": "https://media.discordapp.net/attachments/1171327790277206096/1228290943908712539/dqmmpb_a_cute_cat_7369163b-e910-4239-872f-0a233214b419.png?ex=662b8215&is=66190d15&hm=497ad524fc5610b68201705a1af1bb214c83b192a322090416dcb57022798a42&",
+      "placeholder_version": 1,
+      "placeholder": "3CgKFwJ2YHthh4iUd8iJeXeF9tV9X88H",
+      "id": "1228290943908712539",
+      "height": 2048,
+      "filename": "dqmmpb_a_cute_cat_7369163b-e910-4239-872f-0a233214b419.png",
+      "content_type": "image/png"
+    }
+  ],
+  "guild_id": "1171326645420961793"
+}

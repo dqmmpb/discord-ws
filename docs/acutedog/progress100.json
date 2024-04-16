@@ -1,0 +1,153 @@
+{
+  "type": 0,
+  "tts": false,
+  "timestamp": "2024-04-12T12:04:36.049000+00:00",
+  "referenced_message": null,
+  "pinned": false,
+  "mentions": [
+    {
+      "username": "dqmmpb",
+      "public_flags": 0,
+      "member": {
+        "roles": [
+
+        ],
+        "premium_since": null,
+        "pending": false,
+        "nick": null,
+        "mute": false,
+        "joined_at": "2023-11-07T05:53:54.487000+00:00",
+        "flags": 0,
+        "deaf": false,
+        "communication_disabled_until": null,
+        "avatar": null
+      },
+      "id": "1135150119491227748",
+      "global_name": "dqmmpb",
+      "discriminator": "0",
+      "clan": null,
+      "avatar_decoration_data": null,
+      "avatar": null
+    }
+  ],
+  "mention_roles": [
+
+  ],
+  "mention_everyone": false,
+  "member": {
+    "roles": [
+      "1171331616409399321"
+    ],
+    "premium_since": null,
+    "pending": false,
+    "nick": null,
+    "mute": false,
+    "joined_at": "2023-11-07T06:13:39.715000+00:00",
+    "flags": 0,
+    "deaf": false,
+    "communication_disabled_until": null,
+    "avatar": null
+  },
+  "id": "1228314828284887072",
+  "flags": 0,
+  "embeds": [
+
+  ],
+  "edited_timestamp": null,
+  "content": "**a cute dog** - <@1135150119491227748> (fast)",
+  "components": [
+    {
+      "type": 1,
+      "components": [
+        {
+          "type": 2,
+          "style": 2,
+          "label": "U1",
+          "custom_id": "MJ::JOB::upsample::1::c469c127-3854-44ef-a42e-e47d0e5dcc19"
+        },
+        {
+          "type": 2,
+          "style": 2,
+          "label": "U2",
+          "custom_id": "MJ::JOB::upsample::2::c469c127-3854-44ef-a42e-e47d0e5dcc19"
+        },
+        {
+          "type": 2,
+          "style": 2,
+          "label": "U3",
+          "custom_id": "MJ::JOB::upsample::3::c469c127-3854-44ef-a42e-e47d0e5dcc19"
+        },
+        {
+          "type": 2,
+          "style": 2,
+          "label": "U4",
+          "custom_id": "MJ::JOB::upsample::4::c469c127-3854-44ef-a42e-e47d0e5dcc19"
+        },
+        {
+          "type": 2,
+          "style": 2,
+          "emoji": {
+            "name": "🔄"
+          },
+          "custom_id": "MJ::JOB::reroll::0::c469c127-3854-44ef-a42e-e47d0e5dcc19::SOLO"
+        }
+      ]
+    },
+    {
+      "type": 1,
+      "components": [
+        {
+          "type": 2,
+          "style": 2,
+          "label": "V1",
+          "custom_id": "MJ::JOB::variation::1::c469c127-3854-44ef-a42e-e47d0e5dcc19"
+        },
+        {
+          "type": 2,
+          "style": 2,
+          "label": "V2",
+          "custom_id": "MJ::JOB::variation::2::c469c127-3854-44ef-a42e-e47d0e5dcc19"
+        },
+        {
+          "type": 2,
+          "style": 2,
+          "label": "V3",
+          "custom_id": "MJ::JOB::variation::3::c469c127-3854-44ef-a42e-e47d0e5dcc19"
+        },
+        {
+          "type": 2,
+          "style": 2,
+          "label": "V4",
+          "custom_id": "MJ::JOB::variation::4::c469c127-3854-44ef-a42e-e47d0e5dcc19"
+        }
+      ]
+    }
+  ],
+  "channel_id": "1171327790277206096",
+  "author": {
+    "username": "Midjourney Bot",
+    "public_flags": 589824,
+    "id": "936929561302675456",
+    "global_name": null,
+    "discriminator": "9282",
+    "clan": null,
+    "bot": true,
+    "avatar_decoration_data": null,
+    "avatar": "f6ce562a6b4979c4b1cbc5b436d3be76"
+  },
+  "attachments": [
+    {
+      "width": 2048,
+      "url": "https://cdn.discordapp.com/attachments/1171327790277206096/1228314827743559781/dqmmpb_a_cute_dog_c469c127-3854-44ef-a42e-e47d0e5dcc19.png?ex=662b9853&is=66192353&hm=a1a788b074f824c991f024d0b72de6c13c9b7f96950d6d0cb85cb4041f58de5b&",
+      "size": 6927012,
+      "proxy_url": "https://media.discordapp.net/attachments/1171327790277206096/1228314827743559781/dqmmpb_a_cute_dog_c469c127-3854-44ef-a42e-e47d0e5dcc19.png?ex=662b9853&is=66192353&hm=a1a788b074f824c991f024d0b72de6c13c9b7f96950d6d0cb85cb4041f58de5b&",
+      "placeholder_version": 1,
+      "placeholder": "lhgKFwTfRXmGenhoh4hoZ3eIBot2oGcH",
+      "id": "1228314827743559781",
+      "height": 2048,
+      "filename": "dqmmpb_a_cute_dog_c469c127-3854-44ef-a42e-e47d0e5dcc19.png",
+      "content_type": "image/png"
+    }
+  ],
+  "guild_id": "1171326645420961793"
+}

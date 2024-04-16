@@ -1,0 +1,14 @@
+{
+  "type": 3,
+  "nonce": "1229593014905602048",
+  "guild_id": "1171326645420961793",
+  "channel_id": "1171327790277206096",
+  "message_flags": 0,
+  "message_id": "1229306055910096928",
+  "application_id": "936929561302675456",
+  "session_id": "59844b7a8fe40511ee987c63021ffeb6",
+  "data": {
+    "component_type": 2,
+    "custom_id": "MJ::JOB::variation::1::56ab7634-22e6-44d0-97ac-afb460b550f1"
+  }
+}

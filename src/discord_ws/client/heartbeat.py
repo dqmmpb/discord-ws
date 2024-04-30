@@ -74,9 +74,11 @@ class Heart:
                 tg.create_task(self._run(stream))
                 yield self
         except asyncio.exceptions.CancelledError as e:
-            if e.errors:
+            if hasattr(e, 'errors'):
                 for error in e.errors:
                     log.error("Heartbeat asyncio error %s %s", error, self.token[:10])
+            else:
+                log.error("Heartbeat asyncio error %s %s", 'CancelledError', self.token[:10])
             raise
         except Exception as e:
             log.error("Heartbeat error %s %s", e, self.token[:10])

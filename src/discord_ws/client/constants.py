@@ -40,3 +40,11 @@ GATEWAY_CANNOT_RESUME_CLOSE_CODES = (
     4009,
 )
 """A sequence of close codes where the client must reset its current session."""
+
+
+"""
+A sequence of close codes where the client is closed by websocket.
+"""
+WEBSOCKET_CLOSE_CODES = (
+    1001,
+)

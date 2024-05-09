@@ -15,6 +15,7 @@ from .constants import (
     GATEWAY_CANNOT_RESUME_CLOSE_CODES,
     GATEWAY_CLOSE_CODES,
     GATEWAY_RECONNECT_CLOSE_CODES,
+    WEBSOCKET_CLOSE_CODES,
 )
 from .errors import _unwrap_first_exception
 from .events import DispatchEvent, Event, Hello, InvalidSession
@@ -553,7 +554,10 @@ class Client:
             if code in GATEWAY_CANNOT_RESUME_CLOSE_CODES:
                 self._invalidate_session()
 
-            if code not in GATEWAY_RECONNECT_CLOSE_CODES:
+            if code in WEBSOCKET_CLOSE_CODES:
+                action = "Closed with %s, session cannot be resumed %s"
+                log.info(action, reason, self.token[:10])
+            elif code not in GATEWAY_RECONNECT_CLOSE_CODES:
                 exc = self._make_connection_closed_error(code, reason)
                 raise exc from None
             elif self._can_resume():

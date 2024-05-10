@@ -538,7 +538,7 @@ class Client:
         elif e.sent is not None and not e.rcvd_then_sent:
             # 1000 / 1001 causes our client to appear offline,
             # in which case we probably don't want to reconnect
-            reconnect = e.sent.code not in (1000, 1001)
+            reconnect = e.sent.code not in WEBSOCKET_CLOSE_CODES
             if reconnect:
                 message = "Closed by us with %d, can reconnect %s"
             else:
@@ -555,7 +555,8 @@ class Client:
                 self._invalidate_session()
 
             if code in WEBSOCKET_CLOSE_CODES:
-                action = "Closed with %s, session cannot be resumed %s"
+                self._invalidate_session()
+                action = "Closed with %s, websocket closed %s"
                 log.info(action, reason, self.token[:10])
             elif code not in GATEWAY_RECONNECT_CLOSE_CODES:
                 exc = self._make_connection_closed_error(code, reason)

@@ -46,5 +46,6 @@ GATEWAY_CANNOT_RESUME_CLOSE_CODES = (
 A sequence of close codes where the client is closed by websocket.
 """
 WEBSOCKET_CLOSE_CODES = (
+    1000,
     1001,
 )

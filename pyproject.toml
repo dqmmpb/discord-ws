@@ -12,6 +12,7 @@ dynamic = ["version"]
 dependencies = [
     "httpx>=0.25.0",
     "websockets>=11.0.3",
+    "user-agents>=2.2.0"
 ]
 classifiers = [
     "Development Status :: 3 - Alpha",

@@ -35,11 +35,27 @@ from discord_ws.http import _create_user_agent
 from discord_ws.intents import Intents
 from discord_ws.metadata import get_distribution_metadata
 from discord_ws.types import GatewayPresenceUpdate
+from user_agents import parse
 
 log = logging.getLogger(__name__)
 
 DispatchFunc = Callable[[DispatchEvent], Any]
 
+
+def parse_user_agent(user_agent_string):
+    # Parse the user agent string using the user_agents library
+    user_agent = parse(user_agent_string)
+
+    # Extracting properties from the user agent
+    browser_group = user_agent.browser.family
+    browser_version = user_agent.browser.version_string
+    os_name = user_agent.os.family
+
+    return {
+        "browser": browser_group,
+        "browser_version": browser_version,
+        "os": os_name,
+    }
 
 class Client:
     """The websocket client for connecting to the Discord Gateway."""
@@ -416,13 +432,57 @@ class Client:
 
     async def _create_identify_payload(self) -> Event:
         metadata = get_distribution_metadata()
+        browser = parse_user_agent(self.user_agent)
         d = {
+            # "token": self.token,
+            # "intents": self.intents,
+            # "properties": {
+            #     "os": sys.platform,
+            #     "browser": metadata["Name"],
+            #     "device": metadata["Name"],
+            # },
+            "capabilities": 16381,
+            "client_state": {
+                "api_code_version": 0,
+                "highest_last_message_id": "0",
+                "read_state_version": 0,
+                "user_guild_settings_version": -1,
+                "private_channels_version": "0",
+                "user_settings_version": -1,
+                "guild_versions": {
+
+                }
+            },
+            "compress": False,
+            "presence": {
+                "activities": [
+
+                ],
+                "afk": False,
+                "since": 0,
+                "status": "online"
+            },
             "token": self.token,
             "intents": self.intents,
             "properties": {
                 "os": sys.platform,
                 "browser": metadata["Name"],
                 "device": metadata["Name"],
+            },
+            "properties": {
+                "referer": "https://www.midjourney.com",
+                "os": browser.get("os"),
+                "referring_domain_current": "",
+                "client_event_source": None,
+                "referrer_current": "",
+                "system_locale": "zh-CN",
+                "browser": browser.get("browser"),
+                "release_channel": "stable",
+                "browser_version": browser.get("browser_version"),
+                "device": "",
+                "browser_user_agent": self.user_agent,
+                "client_build_number": 222963,
+                "referring_domain": "www.midjourney.com"
             },
             # TODO: payload compression
             # TODO: sharding
